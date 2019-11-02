@@ -1,0 +1,48 @@
+services:
+  drivewaycam:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      #image: timelapse:1.0
+    container_name: DrivewayCam
+    environment:
+    - PGID=${PGID}
+    - PUID=${PUID}
+    - TZ=${TZ}
+    - CAMERA_NAME=DrivewayCam
+#    - STREAM=${STREAM}
+    hostname: ${DOCKERHOSTNAME}
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    restart: unless-stopped
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ${DOCKERCONFDIR}/timelapse/:/timelapse_data
+    - ${DOCKERSHAREDDIR}:/shared
+  backyardcam:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      #image: timelapse:1.0
+    container_name: BackyardCam
+    environment:
+    - PGID=${PGID}
+    - PUID=${PUID}
+    - TZ=${TZ}
+    - CAMERA_NAME=BackyardCam
+#    - STREAM=${STREAM}
+    hostname: ${DOCKERHOSTNAME}
+    logging:
+      driver: json-file
+      options:
+        max-file: ${DOCKERLOGGING_MAXFILE}
+        max-size: ${DOCKERLOGGING_MAXSIZE}
+    restart: unless-stopped
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ${DOCKERCONFDIR}/timelapse/:/timelapse_data
+    - ${DOCKERSHAREDDIR}:/shared
+version: "3.4"

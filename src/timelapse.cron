@@ -1,0 +1,3 @@
+* * * * * sh /usr/local/timelapse/imagepuller.sh >> /var/log/cron.log 2>&1
+55 23 * * * sh /usr/local/timelapse/moviemaker.sh >> /var/log/cron.log 2>&1
+
