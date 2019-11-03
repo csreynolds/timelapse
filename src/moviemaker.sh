@@ -5,6 +5,9 @@ fi
 
 date="$(date "+%Y-%m-%d")"
 
+#Wait for 5min to grab all images from current day
+sleep 300
+
 mkdir -p ${RAW_IMAGE_DIR}/${date}
 mv ${RAW_IMAGE_DIR}/${date}_* ${RAW_IMAGE_DIR}/${date}/
 
