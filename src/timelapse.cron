@@ -4,7 +4,7 @@
 #Once a day at 23:55
 55 23 * * * sh /usr/local/timelapse/moviemaker.sh >> /var/log/cron.log 2>&1
 
-#Every 5min(darksky api free allows 1000 polls a dat)
+#Every 5min(darksky api free allows 1000 polls a day)
 */5 * * * * sh /usr/local/timelapse/darkskypoll.sh >> /var/log/cron.log 2>&1
 
 
