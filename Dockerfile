@@ -3,7 +3,7 @@ FROM ubuntu:19.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update; apt-get install -y ffmpeg vlc cron; \
-	apt-get -y install wget python3-distutils python3-pip; \
+	apt-get -y install wget python3-distutils python3-pip jq; \
 	touch /etc/crontab /etc/cron.*/*; \
 	touch /var/log/cron.log; \
 	rm -rf /var/lib/apt/lists/*
