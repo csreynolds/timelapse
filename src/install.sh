@@ -12,3 +12,12 @@ python3 setup.py install
 popd
 rm -rf youtube-upload-master
 rm -rf master.zip
+
+#Grab weather icons and create darksky structure
+mkdir -p /usr/local/timelapse/darksky
+pushd /usr/local/timelapse/darksky
+#http://adamwhitcroft.com/climacons/
+wget https://github.com/AdamWhitcroft/climacons/archive/master.zip
+unzip master.zip
+rm -rf master.zip
+
