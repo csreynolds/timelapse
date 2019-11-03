@@ -23,6 +23,3 @@ docker compose up -d
 
 ffmpeg cron run outputs to /var/log/cron.log for debugging if needed.
 
-
-
-FUTURE: add darksky api txt overlay to stills capturing.
