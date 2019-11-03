@@ -3,7 +3,7 @@
 #Create folder structure if not present
 if [ ! -z "${CAMERA_NAME}" ] && [ ! -f "/timelapse_data/${CAMERA_NAME}/timelapse.cfg" ] ; then
 	#Remove "" from name string
-	CAMERA_NAME=sed -e 's/^"//' -e 's/"$//' <<<"${CAMERA_NAME}"
+	CAMERA_NAME=`sed -e 's/^"//' -e 's/"$//' <<<"${CAMERA_NAME}"`
 	mkdir -p /timelapse_data/${CAMERA_NAME}/raw/
 	cp /usr/local/timelapse/timelapse.cfg.example /timelapse_data/${CAMERA_NAME}/timelapse.cfg
 fi

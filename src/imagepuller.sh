@@ -7,7 +7,7 @@ if [ ! -d "${RAW_IMAGE_DIR}" ] ; then
 	mkdir -p ${RAW_IMAGE_DIR}
 fi
 
-if [ -z "cat ${CONDITIONS_OVERLAY_TXT_FILE}" ] && [ -f "${CONDITIONS_OVERLAY_FONT_FILE}" ] ; then
+if [ ! -z "cat ${CONDITIONS_OVERLAY_TXT_FILE}" ] && [ -f "${CONDITIONS_OVERLAY_FONT_FILE}" ] ; then
 	for SEC in 00 15 30 45;
 	do 
 		ffmpeg -y -i ${CAMERA_RTSP} \

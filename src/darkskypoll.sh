@@ -1,3 +1,12 @@
+#Add random wait to script to avoid multiple containers writing to ${CONDITIONS_TXT} at the same time
+FLOOR=10;
+CEILING=280;
+RANGE=$(($CEILING-$FLOOR+1));
+let "RESULT %= $RANGE";
+RESULT=$(($RESULT+$FLOOR));
+echo "Waiting ${RESULT} seconds to avoid conditions.txt collisions between containers."
+sleep ${RESULT}
+
 if [ -z "${CAMERA_NAME}" ]; then 
 	CAMERA_NAME=`cat /camera.name`
 fi
