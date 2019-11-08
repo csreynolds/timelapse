@@ -54,3 +54,4 @@ echo "WSpd:${WINDSPEED}" >> ${CONDITIONS_TXT}
 echo "WGst:${WINDGUST}" >> ${CONDITIONS_TXT}
 echo "WDir:${WINDBEARING}" >> ${CONDITIONS_TXT}
 echo "CldCvrPct:${CLOUDCOVER}" >> ${CONDITIONS_TXT}
+echo "Powered by darksky.net" >> ${CONDITIONS_TXT}
